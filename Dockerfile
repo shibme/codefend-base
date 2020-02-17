@@ -16,7 +16,7 @@ RUN ln -s /tools/dependency-check/bin/dependency-check.sh /bin/dependency-check
 RUN go get github.com/securego/gosec/cmd/gosec
 RUN ln -s /go/bin/gosec /bin/gosec
 RUN mkdir -p /root/.ssh
-RUN echo "Host *\n    StrictHostKeyChecking no" > /root/.ssh/config
+RUN printf "Host *\n    StrictHostKeyChecking no" > /root/.ssh/config
 RUN chmod 400 /root/.ssh/config
 WORKDIR /workspace
 RUN dependency-check -s /tmp/
