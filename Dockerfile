@@ -6,6 +6,7 @@ RUN gem install bundler:1.17.1
 RUN gem install bundler
 RUN gem install brakeman
 RUN gem install bundler-audit
+RUN bundle-audit update
 RUN apk add --no-cache npm
 RUN npm install -g retire
 WORKDIR /tools
