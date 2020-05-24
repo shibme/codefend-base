@@ -11,7 +11,7 @@ stages:
 Docker Image Build:
   stage: "Build"
   variables:
-    DOCKER_IMAGE: "shibme/codefender-base"
+    DOCKER_IMAGE: "shibme/codefend-base"
   script:
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
     - docker build -t $DOCKER_IMAGE .
