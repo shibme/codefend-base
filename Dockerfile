@@ -19,9 +19,7 @@ RUN ln -s /go/bin/gosec /bin/gosec
 RUN mkdir -p /root/.ssh
 RUN printf "Host *\n    StrictHostKeyChecking no" > /root/.ssh/config
 RUN chmod 400 /root/.ssh/config
-WORKDIR /workspace
-RUN dependency-check -s /tmp/
-RUN rm dependency-check-report.html
+RUN dependency-check -s /tmp/ && rm dependency-check-report.html
 RUN bundle audit update
 RUN retire update
 WORKDIR /codeinspect
