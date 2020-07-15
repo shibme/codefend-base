@@ -10,7 +10,7 @@ RUN bundle-audit update
 RUN apk add --no-cache npm
 RUN npm install -g retire
 WORKDIR /tools
-ADD https://dl.bintray.com/jeremy-long/owasp/dependency-check-5.3.0-release.zip /tools/dependency-check.zip
+ADD https://dl.bintray.com/jeremy-long/owasp/dependency-check-5.3.2-release.zip /tools/dependency-check.zip
 RUN unzip dependency-check.zip
 RUN rm dependency-check.zip
 RUN ln -s /tools/dependency-check/bin/dependency-check.sh /bin/dependency-check
